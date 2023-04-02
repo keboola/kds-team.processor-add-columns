@@ -1,0 +1,5 @@
+keboola.component==1.4.2
+keboola.utils
+mock
+freezegun
+https://bitbucket.org/kds_consulting_team/datadirtest/get/1.5.1.zip#egg=datadirtest
