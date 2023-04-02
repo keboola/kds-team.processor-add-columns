@@ -1,8 +1,7 @@
 
-Takes all tables in `in/tables/` and renames specified columns in specified tables. Result is moved to `out/tables/` All
-other tables that are not specified or columns that are not specified are moved unchanged.
+Takes all tables in `in/tables/` and adds columns with specified value. Result is moved to `out/tables/`
 
-Files present in folder `in/files` are moved unchanged.
+Files folder `in/files` is moved unchanged.
 
 Manifest files are respected and transferred / modified as well.
 
@@ -12,39 +11,33 @@ Manifest files are respected and transferred / modified as well.
 
 ## Configuration
 
+list columns that will be added to all tables on the input. Column value is constant provided by specified function.
+
+- **name** - name of the result column
+- **function** - function (or set of nested functions) to construct the result value
+
+
 ### Sample configuration
 
 ```json
 {
   "definition": {
-    "component": "kds-team.processor-rename-headers"
+    "component": "kds-team.processor-add-columns"
   },
   "parameters": {
-    "test.csv": {
-      "column_mapping": {
-        "Column_1": "New_name_col_1"
+    "columns": [
+      {
+        "name": "timestamp_custom",
+        "function": {
+          "function": "string_to_date",
+          "args": [
+            "yesterday",
+            "%Y-%m-%d"
+          ]
+        }
       }
-    }
+    ]
   }
 }
-```
-
-List table names in parameters and list columns to rename, all others are kept
 
 ```
-"test.csv": {
-          "column_mapping": {
-            "Column_1": "New_name_col_1"
-          }
-```
-
-**NOTE**: Simple `*` wildcard is supported at the end of table name, e.g.:
-
-```
-"te*": {
-          "column_mapping": {
-            "Column_1": "New_name_col_1"
-          }
-```
-
-The above will rename columns in table `test.csv`.

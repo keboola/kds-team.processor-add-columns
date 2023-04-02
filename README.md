@@ -17,26 +17,6 @@ list columns that will be added to all tables on the input. Column value is cons
 - **name** - name of the result column
 - **function** - function (or set of nested functions) to construct the result value
 
-**Example parameters:**
-
-```json
-{
-  "parameters": {
-    "columns": [
-      {
-        "name": "timestamp_custom",
-        "function": {
-          "function": "string_to_date",
-          "args": [
-            "yesterday",
-            "%Y-%m-%d"
-          ]
-        }
-      }
-    ]
-  }
-}
-```
 
 ### Sample configuration
 
@@ -50,16 +30,10 @@ list columns that will be added to all tables on the input. Column value is cons
       {
         "name": "timestamp_custom",
         "function": {
-          "function": "concat",
+          "function": "string_to_date",
           "args": [
-            "custom_timestamp_",
-            {
-              "function": "string_to_date",
-              "args": [
-                "yesterday",
-                "%Y-%m-%d"
-              ]
-            }
+            "yesterday",
+            "%Y-%m-%d"
           ]
         }
       }
