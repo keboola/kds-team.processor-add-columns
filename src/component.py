@@ -52,6 +52,7 @@ class Component(ComponentBase):
         column_value = self._perform_custom_function(column_def["function"])
         column_name = column_def["name"]
 
+        is_input_mapping_manifest = 'uri' in t._raw_manifest
         if t.is_sliced:
             # is sliced header-less files in a folder
             self.add_column_to_manifest_and_copy_to_out(t.full_path, t._raw_manifest, column_name)  # noqa
@@ -62,13 +63,18 @@ class Component(ComponentBase):
                                          write_header=False)
 
         elif t.columns:
-            # does not have header in file
+            write_header = False
+            if is_input_mapping_manifest:
+                # does have header in file - the processor is in before section (input manifest
+                write_header = True
+
             self.add_column_to_manifest_and_copy_to_out(t.full_path, t._raw_manifest, column_name)  # noqa
             self._add_column_to_file(t.full_path, t.delimiter, t.enclosure, column_value, column_name,
-                                     write_header=False)
+                                     write_header=write_header)
         else:
             self._add_column_to_file(t.full_path, t.delimiter, t.enclosure, column_value, column_name,
                                      write_header=True)
+
             self._copy_manifest_to_out(t)
 
     def _add_column_to_file(self, file_path: str, delimiter, enclosure, column_value, column_name,
