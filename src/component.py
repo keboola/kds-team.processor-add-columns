@@ -49,6 +49,16 @@ class Component(ComponentBase):
 
     def add_column(self, t: TableDefinition, column_def: dict):
 
+        validation_errors = list()
+        if not column_def.get('name'):
+            validation_errors.append('name')
+        if not column_def.get('function'):
+            validation_errors.append('function')
+
+        if validation_errors:
+            raise UserException(
+                f"Column definition is invalid, following required parameters are missing: {validation_errors}")
+
         column_value = self._perform_custom_function(column_def["function"])
         column_name = column_def["name"]
 
@@ -116,7 +126,7 @@ class Component(ComponentBase):
     def _perform_custom_function(self, function_cfg):
 
         if not function_cfg.get('function'):
-            raise ValueError(
+            raise UserException(
                 F'The function value is object and is not a valid function object: {function_cfg}')
         new_args = []
         for arg in function_cfg.get('args'):
