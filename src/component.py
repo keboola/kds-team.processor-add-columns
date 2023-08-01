@@ -70,7 +70,7 @@ class Component(ComponentBase):
             all_slices = glob.glob(t.full_path + '/*')
             for slice_file in all_slices:
                 self._add_column_to_file(slice_file, t.delimiter, t.enclosure, column_value, column_name,
-                                         write_header=False)
+                                         contains_header=False)
 
         elif t.columns:
             write_header = False
@@ -80,15 +80,15 @@ class Component(ComponentBase):
 
             self.add_column_to_manifest_and_copy_to_out(t.full_path, t._raw_manifest, column_name)  # noqa
             self._add_column_to_file(t.full_path, t.delimiter, t.enclosure, column_value, column_name,
-                                     write_header=write_header)
+                                     contains_header=write_header)
         else:
             self._add_column_to_file(t.full_path, t.delimiter, t.enclosure, column_value, column_name,
-                                     write_header=True)
+                                     contains_header=True)
 
             self._copy_manifest_to_out(t)
 
     def _add_column_to_file(self, file_path: str, delimiter, enclosure, column_value, column_name,
-                            write_header: bool = False):
+                            contains_header: bool = False):
 
         new_path = file_path.replace(self.tables_in_path, self.tables_out_path)
         Path(new_path).parent.mkdir(exist_ok=True)
@@ -98,8 +98,8 @@ class Component(ComponentBase):
             reader = csv.reader(from_file, lineterminator='\n', delimiter=delimiter, quotechar=enclosure)
             writer = csv.writer(to_file, lineterminator='\n', delimiter=delimiter, quotechar=enclosure)
 
-            first_line = next(reader)
-            if write_header:
+            if contains_header:
+                first_line = next(reader)
                 first_line.append(column_name)
                 writer.writerow(first_line)
 
