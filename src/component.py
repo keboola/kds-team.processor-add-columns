@@ -91,8 +91,13 @@ class Component(ComponentBase):
                             contains_header: bool = False):
 
         new_path = file_path.replace(self.tables_in_path, self.tables_out_path)
+        temp_path = new_path + ".tmp"
+        Path(temp_path).parent.mkdir(exist_ok=True)
+        if os.path.exists(new_path):
+            file_path = new_path
+
         Path(new_path).parent.mkdir(exist_ok=True)
-        with open(file_path, encoding='utf-8') as from_file, open(new_path, mode="w", encoding='utf-8') as to_file:
+        with open(file_path, encoding='utf-8') as from_file, open(temp_path, mode="w", encoding='utf-8') as to_file:
             delimiter = delimiter
             enclosure = enclosure
             reader = csv.reader(from_file, lineterminator='\n', delimiter=delimiter, quotechar=enclosure)
@@ -106,6 +111,8 @@ class Component(ComponentBase):
             for r in reader:
                 r.append(column_value)
                 writer.writerow(r)
+
+        shutil.move(temp_path, new_path)
 
     def _copy_manifest_to_out(self, t: TableDefinition):
         if t.get_manifest_dictionary():
