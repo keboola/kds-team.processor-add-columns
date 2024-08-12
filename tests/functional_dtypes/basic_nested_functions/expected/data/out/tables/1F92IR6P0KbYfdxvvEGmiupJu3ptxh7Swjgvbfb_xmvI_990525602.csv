@@ -1,0 +1,202 @@
+track,session_id,session_name,timestamp_custom
+product_owner,1152674,Platform Introduction (PR),custom_timestamp_2024-08-11
+data_specialist,1152674,Platform Introduction (PR),custom_timestamp_2024-08-11
+data_specialist,1249022,SQL Syntax Training (PR),custom_timestamp_2024-08-11
+data_specialist,1152675,Best Practices (PR),custom_timestamp_2024-08-11
+data_specialist,1152676,Debug Techniques (PR),custom_timestamp_2024-08-11
+data_specialist,1155656,Common Components and Processors (PR),custom_timestamp_2024-08-11
+sr_data_developer,1152674,Platform Introduction (PR),custom_timestamp_2024-08-11
+sr_data_developer,1249022,SQL Syntax Training (PR),custom_timestamp_2024-08-11
+sr_data_developer,1152675,Best Practices (PR),custom_timestamp_2024-08-11
+sr_data_developer,1152676,Debug Techniques (PR),custom_timestamp_2024-08-11
+sr_data_developer,1174202,Generic Extractor (PR),custom_timestamp_2024-08-11
+sr_data_developer,1155656,Common Components and Processors (PR),custom_timestamp_2024-08-11
+sr_data_developer,1174274,KBC APIs (PR),custom_timestamp_2024-08-11
+sr_data_developer,1173117,Data Science (PR),custom_timestamp_2024-08-11
+platform_developer,1152674,Platform Introduction (PR),custom_timestamp_2024-08-11
+platform_developer,1249022,SQL Syntax Training (PR),custom_timestamp_2024-08-11
+platform_developer,1152675,Best Practices (PR),custom_timestamp_2024-08-11
+platform_developer,1152676,Debug Techniques (PR),custom_timestamp_2024-08-11
+platform_developer,1174202,Generic Extractor (PR),custom_timestamp_2024-08-11
+platform_developer,1174222,Project Health Check (PR),custom_timestamp_2024-08-11
+platform_developer,1155656,Common Components and Processors (PR),custom_timestamp_2024-08-11
+platform_developer,1174224,Component Behind the Scenes (PR),custom_timestamp_2024-08-11
+platform_developer,1174264,Component Creation (PR),custom_timestamp_2024-08-11
+platform_developer,1174274,KBC APIs (PR),custom_timestamp_2024-08-11
+platform_developer,1173117,Data Science (PR),custom_timestamp_2024-08-11
+platform_developer,1173118,Data Governance (PR),custom_timestamp_2024-08-11
+data_scientist,1152674,Platform Introduction (PR),custom_timestamp_2024-08-11
+data_scientist,1249022,SQL Syntax Training (PR),custom_timestamp_2024-08-11
+data_scientist,1152675,Best Practices (PR),custom_timestamp_2024-08-11
+data_scientist,1152676,Debug Techniques (PR),custom_timestamp_2024-08-11
+data_scientist,1155656,Common Components and Processors (PR),custom_timestamp_2024-08-11
+data_scientist,1173117,Data Science (PR),custom_timestamp_2024-08-11
+admin,1152674,Platform Introduction (PR),custom_timestamp_2024-08-11
+admin,1249022,SQL Syntax Training (PR),custom_timestamp_2024-08-11
+admin,1152675,Best Practices (PR),custom_timestamp_2024-08-11
+admin,1152676,Debug Techniques (PR),custom_timestamp_2024-08-11
+admin,1174202,Generic Extractor (PR),custom_timestamp_2024-08-11
+admin,1174222,Project Health Check (PR),custom_timestamp_2024-08-11
+admin,1155656,Common Components and Processors (PR),custom_timestamp_2024-08-11
+admin,1174274,KBC APIs (PR),custom_timestamp_2024-08-11
+admin,1173117,Data Science (PR),custom_timestamp_2024-08-11
+admin,1173118,Data Governance (PR),custom_timestamp_2024-08-11
+,#N/A,,custom_timestamp_2024-08-11
+,#N/A,,custom_timestamp_2024-08-11
+,#N/A,,custom_timestamp_2024-08-11
+,#N/A,,custom_timestamp_2024-08-11
+,#N/A,,custom_timestamp_2024-08-11
+,#N/A,,custom_timestamp_2024-08-11
+,#N/A,,custom_timestamp_2024-08-11
+,#N/A,,custom_timestamp_2024-08-11
+,#N/A,,custom_timestamp_2024-08-11
+,#N/A,,custom_timestamp_2024-08-11
+,#N/A,,custom_timestamp_2024-08-11
+,#N/A,,custom_timestamp_2024-08-11
+,#N/A,,custom_timestamp_2024-08-11
+,#N/A,,custom_timestamp_2024-08-11
+,#N/A,,custom_timestamp_2024-08-11
+,#N/A,,custom_timestamp_2024-08-11
+,#N/A,,custom_timestamp_2024-08-11
+,#N/A,,custom_timestamp_2024-08-11
+,#N/A,,custom_timestamp_2024-08-11
+,#N/A,,custom_timestamp_2024-08-11
+,#N/A,,custom_timestamp_2024-08-11
+,#N/A,,custom_timestamp_2024-08-11
+,#N/A,,custom_timestamp_2024-08-11
+,#N/A,,custom_timestamp_2024-08-11
+,#N/A,,custom_timestamp_2024-08-11
+,#N/A,,custom_timestamp_2024-08-11
+,#N/A,,custom_timestamp_2024-08-11
+,#N/A,,custom_timestamp_2024-08-11
+,#N/A,,custom_timestamp_2024-08-11
+,#N/A,,custom_timestamp_2024-08-11
+,#N/A,,custom_timestamp_2024-08-11
+,#N/A,,custom_timestamp_2024-08-11
+,#N/A,,custom_timestamp_2024-08-11
+,#N/A,,custom_timestamp_2024-08-11
+,#N/A,,custom_timestamp_2024-08-11
+,#N/A,,custom_timestamp_2024-08-11
+,#N/A,,custom_timestamp_2024-08-11
+,#N/A,,custom_timestamp_2024-08-11
+,#N/A,,custom_timestamp_2024-08-11
+,#N/A,,custom_timestamp_2024-08-11
+,#N/A,,custom_timestamp_2024-08-11
+,#N/A,,custom_timestamp_2024-08-11
+,#N/A,,custom_timestamp_2024-08-11
+,#N/A,,custom_timestamp_2024-08-11
+,#N/A,,custom_timestamp_2024-08-11
+,#N/A,,custom_timestamp_2024-08-11
+,#N/A,,custom_timestamp_2024-08-11
+,#N/A,,custom_timestamp_2024-08-11
+,#N/A,,custom_timestamp_2024-08-11
+,#N/A,,custom_timestamp_2024-08-11
+,#N/A,,custom_timestamp_2024-08-11
+,#N/A,,custom_timestamp_2024-08-11
+,#N/A,,custom_timestamp_2024-08-11
+,#N/A,,custom_timestamp_2024-08-11
+,#N/A,,custom_timestamp_2024-08-11
+,#N/A,,custom_timestamp_2024-08-11
+,#N/A,,custom_timestamp_2024-08-11
+,#N/A,,custom_timestamp_2024-08-11
+,#N/A,,custom_timestamp_2024-08-11
+,#N/A,,custom_timestamp_2024-08-11
+,#N/A,,custom_timestamp_2024-08-11
+,#N/A,,custom_timestamp_2024-08-11
+,#N/A,,custom_timestamp_2024-08-11
+,#N/A,,custom_timestamp_2024-08-11
+,#N/A,,custom_timestamp_2024-08-11
+,#N/A,,custom_timestamp_2024-08-11
+,#N/A,,custom_timestamp_2024-08-11
+,#N/A,,custom_timestamp_2024-08-11
+,#N/A,,custom_timestamp_2024-08-11
+,#N/A,,custom_timestamp_2024-08-11
+,#N/A,,custom_timestamp_2024-08-11
+,#N/A,,custom_timestamp_2024-08-11
+,#N/A,,custom_timestamp_2024-08-11
+,#N/A,,custom_timestamp_2024-08-11
+,#N/A,,custom_timestamp_2024-08-11
+,#N/A,,custom_timestamp_2024-08-11
+,#N/A,,custom_timestamp_2024-08-11
+,#N/A,,custom_timestamp_2024-08-11
+,#N/A,,custom_timestamp_2024-08-11
+,#N/A,,custom_timestamp_2024-08-11
+,#N/A,,custom_timestamp_2024-08-11
+,#N/A,,custom_timestamp_2024-08-11
+,#N/A,,custom_timestamp_2024-08-11
+,#N/A,,custom_timestamp_2024-08-11
+,#N/A,,custom_timestamp_2024-08-11
+,#N/A,,custom_timestamp_2024-08-11
+,#N/A,,custom_timestamp_2024-08-11
+,#N/A,,custom_timestamp_2024-08-11
+,#N/A,,custom_timestamp_2024-08-11
+,#N/A,,custom_timestamp_2024-08-11
+,#N/A,,custom_timestamp_2024-08-11
+,#N/A,,custom_timestamp_2024-08-11
+,#N/A,,custom_timestamp_2024-08-11
+,#N/A,,custom_timestamp_2024-08-11
+,#N/A,,custom_timestamp_2024-08-11
+,#N/A,,custom_timestamp_2024-08-11
+,#N/A,,custom_timestamp_2024-08-11
+,#N/A,,custom_timestamp_2024-08-11
+,#N/A,,custom_timestamp_2024-08-11
+,#N/A,,custom_timestamp_2024-08-11
+,#N/A,,custom_timestamp_2024-08-11
+,#N/A,,custom_timestamp_2024-08-11
+,#N/A,,custom_timestamp_2024-08-11
+,#N/A,,custom_timestamp_2024-08-11
+,#N/A,,custom_timestamp_2024-08-11
+,#N/A,,custom_timestamp_2024-08-11
+,#N/A,,custom_timestamp_2024-08-11
+,#N/A,,custom_timestamp_2024-08-11
+,#N/A,,custom_timestamp_2024-08-11
+,#N/A,,custom_timestamp_2024-08-11
+,#N/A,,custom_timestamp_2024-08-11
+,#N/A,,custom_timestamp_2024-08-11
+,#N/A,,custom_timestamp_2024-08-11
+,#N/A,,custom_timestamp_2024-08-11
+,#N/A,,custom_timestamp_2024-08-11
+,#N/A,,custom_timestamp_2024-08-11
+,#N/A,,custom_timestamp_2024-08-11
+,#N/A,,custom_timestamp_2024-08-11
+,#N/A,,custom_timestamp_2024-08-11
+,#N/A,,custom_timestamp_2024-08-11
+,#N/A,,custom_timestamp_2024-08-11
+,#N/A,,custom_timestamp_2024-08-11
+,#N/A,,custom_timestamp_2024-08-11
+,#N/A,,custom_timestamp_2024-08-11
+,#N/A,,custom_timestamp_2024-08-11
+,#N/A,,custom_timestamp_2024-08-11
+,#N/A,,custom_timestamp_2024-08-11
+,#N/A,,custom_timestamp_2024-08-11
+,#N/A,,custom_timestamp_2024-08-11
+,#N/A,,custom_timestamp_2024-08-11
+,#N/A,,custom_timestamp_2024-08-11
+,#N/A,,custom_timestamp_2024-08-11
+,#N/A,,custom_timestamp_2024-08-11
+,#N/A,,custom_timestamp_2024-08-11
+,#N/A,,custom_timestamp_2024-08-11
+,#N/A,,custom_timestamp_2024-08-11
+,#N/A,,custom_timestamp_2024-08-11
+,#N/A,,custom_timestamp_2024-08-11
+,#N/A,,custom_timestamp_2024-08-11
+,#N/A,,custom_timestamp_2024-08-11
+,#N/A,,custom_timestamp_2024-08-11
+,#N/A,,custom_timestamp_2024-08-11
+,#N/A,,custom_timestamp_2024-08-11
+,#N/A,,custom_timestamp_2024-08-11
+,#N/A,,custom_timestamp_2024-08-11
+,#N/A,,custom_timestamp_2024-08-11
+,#N/A,,custom_timestamp_2024-08-11
+,#N/A,,custom_timestamp_2024-08-11
+,#N/A,,custom_timestamp_2024-08-11
+,#N/A,,custom_timestamp_2024-08-11
+,#N/A,,custom_timestamp_2024-08-11
+,#N/A,,custom_timestamp_2024-08-11
+,#N/A,,custom_timestamp_2024-08-11
+,#N/A,,custom_timestamp_2024-08-11
+,#N/A,,custom_timestamp_2024-08-11
+,#N/A,,custom_timestamp_2024-08-11
+,#N/A,,custom_timestamp_2024-08-11
+,#N/A,,custom_timestamp_2024-08-11
+,#N/A,,custom_timestamp_2024-08-11

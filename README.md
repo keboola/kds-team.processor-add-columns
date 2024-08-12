@@ -89,11 +89,11 @@ Nesting of functions is supported:
 }
 ```
 
-It todays UTC time is `2022-01-04`, the above will result in column value `custom_timestamp_2022-01-03`
+If today's UTC time is `2022-01-04`, the above will result in column value `custom_timestamp_2022-01-03`
 
 #### string_to_date
 
-Function converting string value into a datestring in specified format. The value may be either date in `YYYY-MM-DD`
+Function converting string value into a date string in specified format. The value may be either date in `YYYY-MM-DD`
 format, or a relative period e.g. `5 hours ago`, `yesterday`,`3 days ago`, `4 months ago`, `2 years ago`, `today`.
 
 **The resulting relative time is in UTC timezone**

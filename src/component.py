@@ -1,6 +1,5 @@
 import csv
 import glob
-import json
 import logging
 import os
 import shutil
@@ -62,23 +61,22 @@ class Component(ComponentBase):
         column_value = self._perform_custom_function(column_def["function"])
         column_name = column_def["name"]
 
-        is_input_mapping_manifest = 'uri' in t._raw_manifest
         if t.is_sliced:
             # is sliced header-less files in a folder
-            self.add_column_to_manifest_and_copy_to_out(t.full_path, t._raw_manifest, column_name)  # noqa
+            self.add_column_to_manifest_and_copy_to_out(t, column_name)  # noqa
             # add columns in slices
             all_slices = glob.glob(t.full_path + '/*')
             for slice_file in all_slices:
                 self._add_column_to_file(slice_file, t.delimiter, t.enclosure, column_value, column_name,
                                          contains_header=False)
 
-        elif t.columns:
+        elif t.column_names:
             write_header = False
-            if is_input_mapping_manifest:
-                # does have header in file - the processor is in before section (input manifest
+            if t.stage == "in":
+                # does have header in file - the processor is in before section (input manifest)
                 write_header = True
 
-            self.add_column_to_manifest_and_copy_to_out(t.full_path, t._raw_manifest, column_name)  # noqa
+            self.add_column_to_manifest_and_copy_to_out(t, column_name)  # noqa
             self._add_column_to_file(t.full_path, t.delimiter, t.enclosure, column_value, column_name,
                                      contains_header=write_header)
         else:
@@ -119,10 +117,10 @@ class Component(ComponentBase):
             new_path = os.path.join(self.tables_out_path, Path(t.full_path).name + '.manifest')
             shutil.copy(t.full_path + '.manifest', new_path)
 
-    def add_column_to_manifest_and_copy_to_out(self, file_path, manifest, new_column):
-        manifest['columns'].append(new_column)
-        with open(os.path.join(self.tables_out_path, Path(file_path).name + '.manifest'), 'w+') as out_f:
-            json.dump(manifest, out_f)
+    def add_column_to_manifest_and_copy_to_out(self, t, new_column):
+        t.add_column(new_column)
+        self.write_manifest(t)
+        self._copy_manifest_to_out(t)
 
     def _copy_table_to_out(self, t: TableDefinition):
         if Path(t.full_path).is_dir():

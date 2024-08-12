@@ -1,0 +1,21 @@
+{
+  "parameters": {
+    "columns": [
+      {
+        "name": "timestamp_custom",
+        "function": {
+          "function": "string_to_date",
+          "args": [
+            "yesterday",
+            "%Y-%m-%d"
+          ]
+        }
+      }
+    ]
+  },
+  "image_parameters": {},
+  "action": "run",
+  "shared_code_row_ids": [],
+  "storage": {},
+  "authorization": {}
+}
