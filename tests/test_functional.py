@@ -7,6 +7,7 @@ from freezegun import freeze_time
 
 class TestComponent(unittest.TestCase):
 
+    @freeze_time("2024-08-12")
     def test_functional_dtypes(self):
         os.environ['KBC_DATA_TYPE_SUPPORT'] = 'authoritative'
         functional_tests = DataDirTester(data_dir='./tests/functional_dtypes')
