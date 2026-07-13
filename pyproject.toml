@@ -15,11 +15,20 @@ line-length = 120
 [tool.ruff.lint]
 extend-select = ["I", "UP"]
 
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]
+
+[tool.ty.environment]
+extra-paths = ["src"]
+
 [dependency-groups]
 dev = [
     "freezegun>=1.5.5",
     "keboola-datadirtest>=2.3.0",
     "mock>=5.2.0",
+    "pre-commit>=4.6.0",
     "pytest>=9.1.1",
     "ruff==0.9.10",
+    "ty>=0.0.59",
 ]

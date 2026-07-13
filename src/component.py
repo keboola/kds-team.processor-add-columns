@@ -7,15 +7,16 @@ from dataclasses import dataclass, field
 from pathlib import Path
 
 from keboola.component import ComponentBase, UserException
+
 # configuration variables
 from keboola.component.dao import TableDefinition
 
 # global constants'
 from user_functions import UserFunctions
 
-KEY_COLUMNS = 'columns'
+KEY_COLUMNS = "columns"
 # #### Keep for debug
-KEY_DEBUG = 'debug'
+KEY_DEBUG = "debug"
 MANDATORY_PARS = []
 
 
@@ -28,7 +29,6 @@ class TableDef:
 
 
 class Component(ComponentBase):
-
     def __init__(self):
         ComponentBase.__init__(self)
         self.validate_configuration_parameters(MANDATORY_PARS)
@@ -47,16 +47,16 @@ class Component(ComponentBase):
             shutil.copytree(self.files_in_path, self.files_out_path, dirs_exist_ok=True)
 
     def add_column(self, t: TableDefinition, column_def: dict):
-
         validation_errors = list()
-        if not column_def.get('name'):
-            validation_errors.append('name')
-        if not column_def.get('function'):
-            validation_errors.append('function')
+        if not column_def.get("name"):
+            validation_errors.append("name")
+        if not column_def.get("function"):
+            validation_errors.append("function")
 
         if validation_errors:
             raise UserException(
-                f"Column definition is invalid, following required parameters are missing: {validation_errors}")
+                f"Column definition is invalid, following required parameters are missing: {validation_errors}"
+            )
 
         column_value = self._perform_custom_function(column_def["function"])
         column_name = column_def["name"]
@@ -65,10 +65,11 @@ class Component(ComponentBase):
             # is sliced header-less files in a folder
             self.add_column_to_manifest_and_copy_to_out(t, column_name)  # noqa
             # add columns in slices
-            all_slices = glob.glob(t.full_path + '/*')
+            all_slices = glob.glob(t.full_path + "/*")
             for slice_file in all_slices:
-                self._add_column_to_file(slice_file, t.delimiter, t.enclosure, column_value, column_name,
-                                         contains_header=False)
+                self._add_column_to_file(
+                    slice_file, t.delimiter, t.enclosure, column_value, column_name, contains_header=False
+                )
 
         elif t.column_names:
             write_header = False
@@ -77,17 +78,19 @@ class Component(ComponentBase):
                 write_header = True
 
             self.add_column_to_manifest_and_copy_to_out(t, column_name)  # noqa
-            self._add_column_to_file(t.full_path, t.delimiter, t.enclosure, column_value, column_name,
-                                     contains_header=write_header)
+            self._add_column_to_file(
+                t.full_path, t.delimiter, t.enclosure, column_value, column_name, contains_header=write_header
+            )
         else:
-            self._add_column_to_file(t.full_path, t.delimiter, t.enclosure, column_value, column_name,
-                                     contains_header=True)
+            self._add_column_to_file(
+                t.full_path, t.delimiter, t.enclosure, column_value, column_name, contains_header=True
+            )
 
             self._copy_manifest_to_out(t)
 
-    def _add_column_to_file(self, file_path: str, delimiter, enclosure, column_value, column_name,
-                            contains_header: bool = False):
-
+    def _add_column_to_file(
+        self, file_path: str, delimiter, enclosure, column_value, column_name, contains_header: bool = False
+    ):
         new_path = file_path.replace(self.tables_in_path, self.tables_out_path)
         temp_path = new_path + ".tmp"
         Path(temp_path).parent.mkdir(exist_ok=True)
@@ -95,11 +98,11 @@ class Component(ComponentBase):
             file_path = new_path
 
         Path(new_path).parent.mkdir(exist_ok=True)
-        with open(file_path, encoding='utf-8') as from_file, open(temp_path, mode="w", encoding='utf-8') as to_file:
+        with open(file_path, encoding="utf-8") as from_file, open(temp_path, mode="w", encoding="utf-8") as to_file:
             delimiter = delimiter
             enclosure = enclosure
-            reader = csv.reader(from_file, lineterminator='\n', delimiter=delimiter, quotechar=enclosure)
-            writer = csv.writer(to_file, lineterminator='\n', delimiter=delimiter, quotechar=enclosure)
+            reader = csv.reader(from_file, lineterminator="\n", delimiter=delimiter, quotechar=enclosure)
+            writer = csv.writer(to_file, lineterminator="\n", delimiter=delimiter, quotechar=enclosure)
 
             if contains_header:
                 first_line = next(reader)
@@ -114,8 +117,8 @@ class Component(ComponentBase):
 
     def _copy_manifest_to_out(self, t: TableDefinition):
         if t.get_manifest_dictionary():
-            new_path = os.path.join(self.tables_out_path, Path(t.full_path).name + '.manifest')
-            shutil.copy(t.full_path + '.manifest', new_path)
+            new_path = os.path.join(self.tables_out_path, Path(t.full_path).name + ".manifest")
+            shutil.copy(t.full_path + ".manifest", new_path)
 
     def add_column_to_manifest_and_copy_to_out(self, t, new_column):
         t.add_column(new_column)
@@ -129,18 +132,16 @@ class Component(ComponentBase):
             shutil.copy(t.full_path, Path(self.tables_out_path).joinpath(t.name))
 
     def _perform_custom_function(self, function_cfg):
-
-        if not function_cfg.get('function'):
-            raise UserException(
-                F'The function value is object and is not a valid function object: {function_cfg}')
+        if not function_cfg.get("function"):
+            raise UserException(f"The function value is object and is not a valid function object: {function_cfg}")
         new_args = []
-        for arg in function_cfg.get('args'):
+        for arg in function_cfg.get("args"):
             if isinstance(arg, dict):
                 arg = self._perform_custom_function(arg)
             new_args.append(arg)
-        function_cfg['args'] = new_args
+        function_cfg["args"] = new_args
 
-        return self.user_functions.execute_function(function_cfg['function'], *function_cfg.get('args'))
+        return self.user_functions.execute_function(function_cfg["function"], *function_cfg.get("args"))
 
 
 """

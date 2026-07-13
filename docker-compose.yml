@@ -1,16 +1,15 @@
-version: "2"
 services:
-  # for development purposes
   dev:
     build: .
     volumes:
-        - ./:/code
-        - ./data:/data
+      - ./:/code
+      - ./data:/data
     environment:
       - KBC_DATADIR=./data
   test:
-    # Use to run flake8 and unittests checks
-    build: .
+    build:
+      context: .
+      target: test
     volumes:
       - ./:/code
       - ./data:/data

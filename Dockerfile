@@ -1,8 +1,6 @@
 FROM python:3.13-slim AS base
 COPY --from=ghcr.io/astral-sh/uv:latest /uv /uvx /bin/
 
-RUN apt-get update && apt-get install -y build-essential
-
 WORKDIR /code/
 COPY pyproject.toml uv.lock ./
 
@@ -11,7 +9,6 @@ RUN uv sync --no-dev --frozen
 
 COPY src/ src/
 COPY scripts/ scripts/
-COPY deploy.sh .
 
 FROM base AS test
 RUN uv sync --all-groups --frozen
